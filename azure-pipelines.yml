@@ -1,0 +1,13 @@
+# my first attempt to write yaml pipeline
+trigger:
+- main
+pool:
+ vmImage: ubnutu-latest
+
+steps:
+  - task: DotNetCoreCLI@2
+    displayName: 'Restoring dependencies'
+    inputs:
+      command: restore #dotnet restore
+      projects: '**/*.csproj'
+
